@@ -1,0 +1,925 @@
+@font-face {
+  /* pick the font family inter first, then default as what device the user used, like macos */
+
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  src: url("/font/Inter/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  margin: 0;
+  margin-left: 9vw;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222222;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  height: 100%;
+}
+
+.left,
+.right,
+.middle {
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  align-items: flex-start;
+  flex: 0 1 auto; /* flex-grow: 0, flex-shrink: 1, flex-basis: auto */
+}
+
+.right {
+  align-items: flex-end;
+  flex: 0 1 auto; /* flex-grow: 0, flex-shrink: 1, flex-basis: auto */
+  min-width: 250px; /* contoh ukuran, ganti dengan nilai yang Anda inginkan */
+}
+
+.middle {
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
+  min-width: 500px; /* contoh ukuran, ganti dengan nilai yang Anda inginkan */
+  max-width: 500px; /* contoh ukuran, ganti dengan nilai yang Anda inginkan */
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  gap: 28px;
+  align-self: flex-start;
+}
+
+.content {
+  width: 100%;
+}
+
+.myphoto {
+  width: 43px;
+  height: 43px;
+}
+
+.myphoto-reply {
+  width: 36px;
+  height: 36px;
+}
+
+.myphoto-nav {
+  width: 32px;
+  height: 32px;
+}
+
+.myname {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #eeeeee;
+}
+
+.desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #aaaaaa;
+}
+
+.heading {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #eeeeee;
+}
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+
+.heading-bold {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #eeeeee;
+}
+
+.post-list-title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #eeeeee;
+}
+
+.post-list-desc {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #888888;
+}
+
+.post {
+  box-sizing: border-box;
+  display: flex;
+  align-items: start;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 15px;
+}
+
+.post-row {
+  flex-direction: row;
+}
+
+.post-column {
+  flex-direction: column;
+}
+
+.tulisan-my-blog {
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 18px 24px;
+gap: 25.36px;
+
+width: 100%;
+
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.introduction {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 25.36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.middle-border {
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.introduction-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+}
+
+.introduction-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 9px;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 27px;
+  gap: 11px;
+  align-self: flex-end;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+.below-button {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #888888;
+}
+
+.above-button {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #eeeeee;
+}
+
+.login-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 9px 14px;
+  background: #eeeeee;
+  border-radius: 12px;
+}
+
+.login-button:active {
+  background: #bbbbbb;
+}
+
+#loginBtn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #222222;
+}
+
+.icon-home {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-verif {
+  width: 19px;
+  height: 19px;
+}
+
+.post:hover {
+  transition: 0.3s;
+  background-color: #1f1f1f;
+}
+
+.hidden {
+  display: none;
+}
+
+#login-modal, #register-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-modal.show, #register-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+
+.mau-form {
+  background: #222222;
+  border-radius: 16px;
+  padding: 22px; /* Padding di sini akan berlaku untuk semua elemen di dalam div */
+  width: fit-content;
+}
+
+.login-modal-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #eeeeee;
+}
+
+.login-modal-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #bbbbbb;
+  width: 100%;
+}
+
+.button-cancel {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height, or 121% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #eeeeee;
+}
+
+.button-login-mini {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 12.3px 0px 12px;
+  background: #eeeeee;
+  border-radius: 8px;
+}
+
+.login-modal-title-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 6px;
+  align-self: flex-start; /* Baru */
+}
+
+.login-modal-two-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: flex-end; /* Baru */
+}
+
+.login-modal-button-cancel {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #eeeeee;
+  margin-right: 10px; /* Baru, ubah nilainya sesuai kebutuhan Anda */
+}
+
+input, option,select,
+textarea {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background: #333333;
+  border-radius: 8px;
+  border: none;
+  color: #eeeeee;
+  padding: 10px; /* untuk memberikan padding di dalam input */
+  width: 339px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  resize: none;
+}
+
+input,option,select,
+textarea::placeholder {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #777777;
+}
+
+select, option {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #eeeeee;
+}
+
+input,
+textarea:focus {
+  outline: none;
+}
+
+input,
+textarea:focus {
+  color: #eeeeee;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Sesuaikan jarak ini sesuai kebutuhan Anda */
+  align-items: flex-end; /* Baru */
+}
+
+.action-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 18px;
+}
+
+.post-title-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.dashboard-post-title-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  flex-grow: 1; /* Ini akan memaksa elemen untuk memenuhi ruang kosong */
+}
+
+.edit-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 9px;
+  background: #f79009;
+  border-radius: 10px;
+}
+
+.edit-button:active {
+  background: #d66f00;
+}
+
+.trash-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 9px;
+  background: #f04438;
+  border-radius: 10px;
+}
+
+.trash-button:active {
+  background: #cf2317;
+}
+
+.add-button {
+  width: 36px;
+  height: 36px;
+  background: #eeeeee;
+  border-radius: 18px;
+}
+
+.add-button:active {
+  background: #bbbbbb;
+}
+
+#add-modal,
+#edit-modal,
+#delete-modal {
+  display: none;
+}
+
+.mau-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 250ms ease-in-out;
+  opacity: 0;
+}
+
+.mau-modal.show {
+  opacity: 1;
+}
+
+.mau-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  transition: transform 250ms ease-in-out;
+  transform: translateY(-50px);
+}
+
+.mau-modal-content.show {
+  transform: translateY(0);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.post-list {
+  /* Mengatur tinggi elemen menjadi 70% dari tinggi viewport */
+  overflow-y: auto; /* Mengizinkan elemen ini untuk di-scroll pada sumbu y jika kontennya lebih panjang dari tingginya */
+  scrollbar-color: #222222 #222222;
+  scrollbar-width: thin;
+}
+
+.height-index {
+  height: 84.5vh;
+}
+
+.height-index-admin {
+  height: 92vh;
+}
+.height-detail {
+  height: 93.5vh;
+}
+
+.post-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tulisan-my-blog {
+  position: sticky;
+  top: 0;
+}
+
+.tulisan-my-blog-yooi {
+  position: sticky;
+  bottom: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.toast {
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.5s ease;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px 16px;
+  gap: 12px;
+  background: #d92d20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.toast.hidden {
+  top: -50px;
+}
+
+.haptic:active .icon-home path {
+  stroke: #bbbbbb;
+}
+
+.haptic:active .icon-notif path {
+  stroke: #bbbbbb;
+}
+
+.switch-active {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #eeeeee;
+}
+
+.switch-default {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 22px;
+  color: #888888;
+}
+
+.switch {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 25.36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search {
+  font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+color: #888888;
+}
+
+.status-success-wrapper {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 2px 10px;
+gap: 10px;
+background: #054F31;
+border-radius: 4px;
+}
+
+.status-success-font {
+  font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+color: #12B76A;
+}
+
+.status-pending-wrapper{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 2px 10px;
+gap: 10px;
+background: #7A2E0E;
+border-radius: 4px;
+}
+
+.status-pending-font {
+  font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+color: #F79009;
+}
+
+.status-ditindaklanjuti-wrapper {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 2px 10px;
+gap: 10px;
+background: #42307D;
+border-radius: 4px;
+}
+
+.status-ditindaklanjuti-font {
+  font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+color: #9E77ED;
+}
+
+.name-status-wrapper {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+}
+
+.name-date-wrapper {
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+padding: 0px;
+gap: 0px;
+}
+
+.head-wrapper {
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px 0px;
+gap: 0px;
+width: 100%;
+
+}
+
+.full-body{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-between;
+padding: 0px;
+gap: 12px;
+width: 100%;
+}
+
+.aduan-title {
+  font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+color: #EEEEEE;
+}
+
+.aduan-content {
+  font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+color: #BBBBBB;
+}
+
+.counter {
+  font-weight: 400;
+font-size: 12px;
+line-height: 24px;
+color: #888888;
+}
+
+.counter-wrapper {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+}
+
+.counter-all {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+}
+
+.divide-et-impera{
+  width: 100%;
+height: 1px;
+
+background: rgba(255, 255, 255, 0.1);
+}
+
+.tandai-telah-selesai {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 14px;
+gap: 6px;
+background: #039855;
+border-radius: 12px;
+}
+
+.button-selesai {
+  font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+color: #EEEEEE;
+}
+
+.tandai-telah-selesai:active {
+  background: #027A48;
+}
+
+.verif {
+  display: flex;
+flex-direction: row;
+align-items: flex-end;
+padding: 8px 14px;
+gap: 6px;
+background: #0788F5;
+border-radius: 12px;
+}
+
+.button-verif {
+  font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+color: #EEEEEE;
+}
+
+.verif:active {
+  background: #0271D0;
+}
+
+.reply-input {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 16px 24px;
+gap: 20px;
+width: 100%;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #EEEEEE;
+}
+
+.checkbox-container {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 6px;
+width: 100%;
+}
+
+.checkboxs {
+  width: fit-content;
+}
+
+.switch a {
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+.switch .switch-default:hover {
+  cursor: pointer; /* Mengubah cursor menjadi pointer saat di hover pada link yang tidak aktif */
+}
+.switch .switch-active:hover {
+  cursor: default; /* Mengubah cursor menjadi default saat di hover pada link yang aktif */
+}
+
+.title-content-wrapper {
+  display: flex;
+flex-direction: column;
+}
+
+.margin-icon{
+ margin-top: 8px;
+}
+
+.asshole {
+  display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+option {
+  text-decoration: none;
+
+}
+
+.menunggu-diverifikasi {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 20px 24px;
+gap: 12px;
+background: #DC6803;
+}
+
+.menunggu-diverifikasi-font {
+  font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+color: #EEEEEE;
+}
