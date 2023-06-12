@@ -121,7 +121,7 @@ $row = $result->fetch_assoc();
         <div class="tulisan-my-blog">
           <span class="heading-bold">Detail Aduan</span>
           <?php
-          if ($user_id == $pelapor_id  && $row['status'] == 'diverifikasi') {
+          if ($user_id == $pelapor_id  && $row['status'] == 'ditindaklanjuti') {
             echo '<form action="tandaiselesai.php" method="POST"><input type="hidden" name="id" value="' . $row['id'] . '"><button type="submit" class="tandai-telah-selesai"><img src="/lapor-revised/assets/check.svg" alt="check" class="icon-check"><span class="button-selesai">Tandai telah selesai</span></button></form>';} else {}?>
         </div>
 

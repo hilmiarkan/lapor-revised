@@ -18,19 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn->query($sql) or die($conn->error);
 
   header('Location: dashboard_admin.php');
-  /** 
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ii", $instansi, $laporan);
-  
-  if ($stmt->execute()) {
-    header('Location: dashboard_admin.php');
-    exit();
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-
-  */
-
   $stmt->close();
   $conn->close();
 }
