@@ -167,6 +167,9 @@ $row = $result->fetch_assoc();
               </div>
               <span class="aduan-title"><?php echo $row['title']; ?></span>
               <span class="aduan-content"><?php echo nl2br(htmlspecialchars($row['content'], ENT_QUOTES, 'UTF-8')); ?></span>
+              <?php if (!empty($row['imagepath'])) : ?>
+                                            <img class="imagepost" src="<?php echo $row['imagepath']; ?>" alt="<?php echo $row['title']; ?>" />
+                                        <?php endif; ?>
               <div class="divide-et-impera"></div>
               <div class="counter-all">
 

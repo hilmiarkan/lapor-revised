@@ -110,6 +110,9 @@ $result = $conn->query($sql);
                                     <div class="title-content-wrapper">
                                         <span class="aduan-title"><?php echo $row['title']; ?></span>
                                         <span class="aduan-content"><?php echo $row['content']; ?></span>
+                                        <?php if (!empty($row['imagepath'])) : ?>
+                                            <img class="imagepost" src="<?php echo $row['imagepath']; ?>" alt="<?php echo $row['title']; ?>" />
+                                        <?php endif; ?>
                                     </div>
 
 

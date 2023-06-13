@@ -93,7 +93,7 @@ $result = $conn->query($sql);
                         $pelapor = "SELECT laporan.*, users.id FROM laporan LEFT JOIN users ON laporan.user_id = users.id WHERE laporan.id = " . $row['id'] . "";
                         $hasil = $conn->query($pelapor);
                         $wow = $hasil->fetch_assoc()
-                        ?> 
+                        ?>
                         <a href="detail_laporan.php?id=<?php echo $row['id']; ?>&user_id=<?php echo $user_id; ?>&pelapor_id=<?php echo $wow['id']; ?>" style="text-decoration: none; color: inherit;">
 
                             <div class="post post-row pointer">
@@ -137,6 +137,9 @@ $result = $conn->query($sql);
                                     <div class="title-content-wrapper">
                                         <span class="aduan-title"><?php echo $row['title']; ?></span>
                                         <span class="aduan-content"><?php echo $row['content']; ?></span>
+                                        <?php if (!empty($row['imagepath'])) : ?>
+                                            <img class="imagepost" src="<?php echo $row['imagepath']; ?>" alt="<?php echo $row['title']; ?>" />
+                                        <?php endif; ?>
                                     </div>
 
                                 </div>
@@ -169,13 +172,14 @@ $result = $conn->query($sql);
 
         <div id="add-modal" class="modal">
             <div class="mau-form">
-                <form method="post" action="add_post.php">
+                <form method="post" action="add_post.php" enctype="multipart/form-data">
                     <div class="login-modal-title-desc">
                         <span class="login-modal-title">Ada laporan apa gerangan?</span>
                     </div>
 
                     <input type="text" name="title" placeholder="Judul laporan" required>
                     <textarea name="content" placeholder="Jadi gini lho pak.." rows="5" required></textarea>
+                    <input type="file" name="image">
                     <div class="checkbox-container">
                         <input class="checkboxs" id="checkboxId" type="checkbox" name="checkboxName">
                         <label for="checkboxId" class="checkbox-label">Posting secara anonim</label>
